@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[[BIG SHOT]] OFFER!!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none; /* just for wacky effect */
+        }
+
+        body {
+            background: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            padding: 1rem;
+            animation: bgGlitch 0.15s infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes bgGlitch {
+            0% { background: #000; }
+            20% { background: #0a0a0a; }
+            40% { background: #000; }
+            60% { background: #1a001a; }
+            80% { background: #000; }
+            100% { background: #000; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.9);
+            padding: 2rem;
+            border: 3px solid #ff00ff;
+            box-shadow: 0 0 20px #ff00ff, inset 0 0 10px magenta;
+            backdrop-filter: blur(3px);
+            animation: borderGlitch 0.3s infinite;
+        }
+
+        @keyframes borderGlitch {
+            0% { border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff; }
+            50% { border-color: #00ffff; box-shadow: 0 0 30px cyan; }
+            100% { border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff; }
+        }
+
+        .glitch-text {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: textGlitch 0.2s infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes textGlitch {
+            0% { text-shadow: -3px 0 red, 3px 0 blue; transform: skew(0deg); }
+            25% { text-shadow: 3px 0 red, -3px 0 blue; transform: skew(2deg); }
+            50% { text-shadow: -3px 0 red, 3px 0 blue; transform: skew(-2deg); }
+            75% { text-shadow: 3px 0 red, -3px 0 blue; transform: skew(1deg); }
+            100% { text-shadow: -3px 0 red, 3px 0 blue; transform: skew(0deg); }
+        }
+
+        .gif-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .gif-grid img {
+            width: 180px;
+            border: 2px solid magenta;
+            border-radius: 16px;
+            transition: all 0.2s;
+            background: black;
+        }
+
+        .gif-grid img:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 0 25px magenta;
+        }
+
+        input, button {
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            margin: 10px;
+            background: black;
+            border: 2px solid magenta;
+            color: lime;
+            font-family: monospace;
+        }
+
+        button {
+            cursor: pointer;
+            font-weight: bold;
+            background: #300;
+            animation: buttonGlow 0.5s infinite alternate;
+        }
+
+        @keyframes buttonGlow {
+            from { box-shadow: 0 0 5px magenta; }
+            to { box-shadow: 0 0 15px magenta; }
+        }
+
+        button:hover {
+            background: magenta;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        .warning {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: yellow;
+            background: #111;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+        .audio-btn {
+            background: #222;
+            color: white;
+            border: 1px solid magenta;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* random glitch overlay */
+        .glitch-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: repeating-linear-gradient(0deg, rgba(255,0,255,0.1) 0px, rgba(255,0,255,0.1) 2px, transparent 2px, transparent 6px);
+            z-index: 999;
+            animation: scanlines 0.1s linear infinite;
+        }
+
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(4px); }
+        }
+
+        /* countdown timer */
+        .countdown {
+            font-size: 2rem;
+            background: black;
+            display: inline-block;
+            padding: 5px 15px;
+            border: 2px solid magenta;
+            margin: 10px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="glitch-overlay"></div>
+    <div class="container">
+        <div>
+            <button id="playAudio" class="audio-btn">🔊 PLAY [[BIG SHOT]] SOUND (BLARING)</button>
+        </div>
+
+        <div class="glitch-text">
+            [[BIG SHOT]] OFFER!!
+        </div>
+        <div class="glitch-text" style="font-size:1.5rem;">
+            YOU WON 1 MILLION [[Kromer]]
+        </div>
+
+        <!-- Working Spamton GIFs (hotlink-safe) -->
+        <div class="gif-grid">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExendyNjBkbDFzb2x4ejNvdjV0dGRudHBxZjB1ZGNqaDhxeTB2ODFqNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/rr7UTMx0h0XEe3Lr5e/200.webp" alt="Spamton 1">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExendyNjBkbDFzb2x4ejNvdjV0dGRudHBxZjB1ZGNqaDhxeTB2ODFqNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/rr7UTMx0h0XEe3Lr5e/200.webp" alt="Spamton 2">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExendyNjBkbDFzb2x4ejNvdjV0dGRudHBxZjB1ZGNqaDhxeTB2ODFqNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/rr7UTMx0h0XEe3Lr5e/200.webp" alt="Spamton 3">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExendyNjBkbDFzb2x4ejNvdjV0dGRudHBxZjB1ZGNqaDhxeTB2ODFqNyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/rr7UTMx0h0XEe3Lr5e/200.webp" alt="Spamton 4">
+        </div>
+
+        <div class="countdown" id="timer">OFFER EXPIRES IN: 30</div>
+
+        <p>ENTER YOUR [[Credit Card Number]] TO CLAIM:</p>
+        <form id="phishForm">
+            <input type="text" id="card" placeholder="[XXXX-XXXX-XXXX-XXXX]" autocomplete="off">
+            <button type="submit">[[CLICK NOW!!]]</button>
+        </form>
+
+        <div class="warning">
+            ⚠️ THIS IS A FAKE PHISHING DEMO – NO DATA IS COLLECTED ⚠️<br>
+            <span style="font-size:0.8rem;">(Any input you type stays on your device. It's just for laughs.)</span>
+        </div>
+    </div>
+
+    <script>
+        // BIG SHOT AUDIO - REPLACE URL WITH YOUR OWN COPY
+        // You need to upload the BIG SHOT track (e.g., from YouTube or a game rip) to a cloud host or local server.
+        // For demo, I'm using a placeholder. Replace 'YOUR_BIG_SHOT_MP3_URL' with the actual URL.
+        const BIG_SHOT_URL = 'https://drive.google.com/uc?export=download&id=1DhCPgpaPF_8o-A5JgrYgrwRRDneUxFpj';
+        let audio = null;
+
+        const playBtn = document.getElementById('playAudio');
+        playBtn.addEventListener('click', () => {
+            if (!audio) {
+                audio = new Audio(BIG_SHOT_URL);
+                audio.loop = true;
+                audio.volume = 0.9;
+            }
+            audio.play().catch(e => {
+                console.log("Audio play failed:", e);
+                alert("⚠️ Could not play audio. Make sure you've replaced BIG_SHOT_URL with a valid MP3 link.");
+            });
+            playBtn.textContent = "🔊 [[BIG SHOT]] IS BLARING!";
+            playBtn.disabled = true;
+            playBtn.style.opacity = '0.5';
+        });
+
+        // FAKE COUNTDOWN (just for wackiness)
+        let timeLeft = 30;
+        const timerEl = document.getElementById('timer');
+        const interval = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                timerEl.innerHTML = "OFFER EXPIRED! [[TOO LATE]]";
+                timerEl.style.color = "red";
+                // Add more chaos
+                document.body.style.animation = "bgGlitch 0.05s infinite";
+                alert("[[DEAL]] EXPIRED! NOW YOU [[Pay More]]!! (but it's a demo)");
+            } else {
+                timeLeft--;
+                timerEl.innerHTML = `OFFER EXPIRES IN: ${timeLeft}`;
+            }
+        }, 1000);
+
+        // FAKE FORM SUBMIT
+        document.getElementById('phishForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const card = document.getElementById('card').value;
+            if(card) {
+                alert(`HAHA! YOU'VE BEEN [[Spamton]]-ED!\nYour fake card: ${card}\n(Remember: never enter real details on suspicious pages!)`);
+                // extra chaos: random glitch alert
+                setTimeout(() => {
+                    alert("[[KROMER]] STOLEN!! (just kidding, it's a demo)");
+                }, 500);
+            } else {
+                alert("[[EMPTY]]? DON'T BE A [[Small Shot]]! But seriously, never enter real info on unknown sites.");
+            }
+            document.getElementById('card').value = '';
+        });
+
+        // Random glitch effect: change title occasionally
+        setInterval(() => {
+            const titles = ["[[BIG SHOT]]", "SPAMTON G. SPAMTON", "KRIMER", "[[HYPERLINK BLOCKED]]"];
+            document.title = titles[Math.floor(Math.random() * titles.length)];
+        }, 2000);
+    </script>
+</body>
+</html>
